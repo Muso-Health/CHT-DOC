@@ -1,0 +1,16 @@
+.protocol-button {
+  margin-right: 1vw;
+  margin-top: 0.3vw;
+  background-color: #b0e6f3;
+  color: #08111e;
+  font-size: 9px;
+  height: auto;
+  width: auto;
+  text-decoration: none !important;
+}
+.blue-icon, .blue-title {
+  color: #005cc5;
+}
+.white-icon {
+  color: white;
+}

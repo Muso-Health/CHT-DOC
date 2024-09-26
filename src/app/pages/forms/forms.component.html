@@ -1,0 +1,94 @@
+<div class="form-panel">
+  <div class="form-header">
+    <h2 class="title blue-title">CHT Forms</h2>
+  </div>
+  <div class="form-body">
+    <div id="metrics-container">
+      <mat-card class="metric mat-elevation-z3">
+        <mat-card-header>
+          <mat-card-title class="metric-title blue-title">
+            App Forms
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ filteredAppForms }} of {{appForms}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="metric mat-elevation-z3">
+        <mat-card-header>
+          <mat-card-title class="metric-title blue-title">
+            Contact Forms
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            0 of 0
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div id="controls-container">
+      <mat-form-field appearance="fill" class="xform-control">
+        <mat-label>Protocol</mat-label>
+        <mat-select (selectionChange)="protocolChanged($event)">
+          <mat-option [value]="'all'">Tous</mat-option>
+          <mat-option *ngFor="let protocol of protocols" [value]="protocol.id" >{{protocol.title.fr}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="xform-control">
+        <mat-label>Déployé</mat-label>
+        <mat-select (selectionChange)="deployChanged($event)">
+          <mat-option [value]="'all'">Tous</mat-option>
+          <mat-option [value]="'yes'">Déployés</mat-option>
+          <mat-option [value]="'no'">Anciens</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-tab-group>
+
+      <mat-tab label="App Forms">
+        <mat-tab-group  (selectedIndexChange)="triggerTypeChanged($event)">
+          <mat-tab label="All Forms">
+            <mat-grid-list [cols]="cols" [rowHeight]="gridHeight" >
+              <mat-grid-tile *ngFor="let form of filteredForms">
+                <app-form-table [form]="form" [properties]="properties"></app-form-table>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-tab>
+          <mat-tab label="Action Forms">
+            <mat-grid-list [cols]="cols" [rowHeight]="gridHeight" >
+              <mat-grid-tile *ngFor="let form of filteredActionForms">
+                <app-form-table [form]="form" [properties]="properties"></app-form-table>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-tab>
+          <mat-tab label="Task Forms">
+            <mat-grid-list [cols]="cols" [rowHeight]="gridHeight" >
+              <mat-grid-tile *ngFor="let form of filteredTaskForms">
+                <app-form-table [form]="form" [properties]="properties"></app-form-table>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-tab>
+          <mat-tab label="Mixed Forms">
+            <mat-grid-list [cols]="cols" [rowHeight]="gridHeight" >
+              <mat-grid-tile *ngFor="let form of filteredMixedForms">
+                <app-form-table [form]="form" [properties]="properties"></app-form-table>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-tab>
+        </mat-tab-group>
+
+      </mat-tab>
+
+
+      <mat-tab label="Contact Forms">
+
+      </mat-tab>
+
+    </mat-tab-group>
+
+  </div>
+</div>
+

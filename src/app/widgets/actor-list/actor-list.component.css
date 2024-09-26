@@ -1,0 +1,30 @@
+.actor-badge {
+  padding: 0.2vw 0.4vw;
+  display: inline-block;
+  border-radius: 0.8vw;
+  margin-right: 1vw;
+  margin-top: 0.3vw;
+  font-size: 12px;
+  height: auto;
+  width: auto;
+  text-decoration: none !important;
+}
+.CHW {
+  background-color: #cef6d6;
+  color: #08111e;
+}
+.SV {
+  background-color: #f2dbfb;
+  color: #08111e;
+}
+.SM {
+  background-color: #c8e7fa;
+  color: #08111e;
+}
+.blue-icon, .blue-title {
+  color: #005cc5;
+
+}
+.white-icon {
+  color: white;
+}

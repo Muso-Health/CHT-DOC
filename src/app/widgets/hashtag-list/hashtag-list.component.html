@@ -1,0 +1,8 @@
+<a
+  mat-flat-button
+class="protocol-button"
+  *ngFor="let obj of filtered" [href]="obj.url"
+>
+  <mat-icon class="blue-icon">{{obj.icon}}</mat-icon>
+  <span class="blue-title">{{ obj.title.fr }}</span>
+</a>

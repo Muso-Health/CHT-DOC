@@ -1,0 +1,8 @@
+<div
+  [title]="actor.title"
+  [class]="actor.class"
+  *ngFor="let actor of objActors"
+>
+  <mat-icon class="blue-icon">{{actor.icon}}</mat-icon>
+  <span class="blue-title" >{{actor.short}}</span>
+</div>

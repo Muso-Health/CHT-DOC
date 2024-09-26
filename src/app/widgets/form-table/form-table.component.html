@@ -1,0 +1,42 @@
+<table mat-table class="lessons-table mat-elevation-z8"
+       matSort matSortDisableClear matSortActive="name" matSortDirection="asc"
+       [dataSource]="rows" multiTemplateDataRows>
+
+
+  <ng-container matColumnDef="header">
+
+    <th mat-header-cell *matHeaderCellDef></th>
+
+    <td mat-cell *matCellDef="let row" style="text-align: center">
+      <mat-icon class="blue-icon">{{row.icon}}</mat-icon>
+      <span [title]="row.header_tooltip" class=" blue-title"><b>{{row.header_fr}}:</b></span>
+    </td>
+
+  </ng-container>
+
+
+  <ng-container matColumnDef="value">
+
+    <th mat-header-cell *matHeaderCellDef>CHT FORM</th>
+
+    <td mat-cell *matCellDef="let row">
+      <img *ngIf="row.header=='xlsx'"  ngSrc="/excel.png" [alt]="row.header_fr" width="20" height="16">
+      <a [href]="row.link" *ngIf="row.isLink; else textValue" [target]="row.header=='name'?'_self':'_blank'"> {{row.value}}</a>
+      <ng-template #textValue>
+        <span *ngIf="!['tasks', 'protocols','actors','targets','triggerType'].includes(row.header)" >{{row.value}}</span>
+        <app-hashtag-list  *ngIf="['tasks', 'protocols'].includes(row.header)" [row]="row.value" [objectType]="row.header">
+        </app-hashtag-list>
+        <app-actor-list  *ngIf="row.header=='actors'" [actors]="row.value"></app-actor-list>
+        <app-form-action *ngIf="row.header=='triggerType'" [actionType]="row.value"></app-form-action>
+        <app-target-list *ngIf="row.header=='targets'" [targets]="row.value"></app-target-list>
+      </ng-template>
+    </td>
+
+  </ng-container>
+
+
+
+  <tr mat-row
+      *matRowDef="let xvar;columns:displayedColumns"
+  >
+</table>

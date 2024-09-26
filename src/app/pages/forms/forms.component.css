@@ -1,0 +1,52 @@
+#metrics-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.metric {
+  margin-top: 0.4vw;
+  margin-left: 1.5vw;
+}
+.metric-title {
+  font-size: small;
+}
+.metric mat-card-content {
+  text-align: center;
+}
+#controls-container {
+  margin-top: 1vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+.xform-control {
+  margin-left: 5vw;
+}
+.courses-panel {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.form-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.title {
+  text-align: center;
+  margin-right: 15px;
+  color: #005cc5;
+}
+#cht {
+  max-width: 50%;
+  max-height: 80px;
+  text-align: center;
+}
+.blue-title {
+  color: #005cc5;
+}

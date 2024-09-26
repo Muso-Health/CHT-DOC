@@ -1,0 +1,8 @@
+<div
+  [title]="target.title"
+  [class]="target.class"
+  *ngFor="let target of objTargets"
+>
+  <mat-icon class="blue-icon">{{target.icon}}</mat-icon>
+  <span class="blue-title" >{{target.short}}</span>
+</div>
